@@ -9,7 +9,7 @@ declare global {
 const StringPrototype = String.prototype as any;
 
 for (const key of Object.keys(extensions)) {
-    StringPrototype.prototype[key] = function (...args: any[]) {
+    StringPrototype[key] = function (...args: any[]) {
         return extensions[key as keyof typeof extensions].apply(this, args);
     };
 }
