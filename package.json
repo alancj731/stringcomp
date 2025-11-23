@@ -11,9 +11,12 @@
   "description": "Utility library for string comparison",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "npm run clean && tsup --format cjs,esm ./src/index.ts --dts --sourcemap --minify --clean",
-    "prepare": "husky",
+    "prepare": "npm run build && husky",
     "clean": "rm -rf dist"
   },
   "repository": {
