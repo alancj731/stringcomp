@@ -3,7 +3,7 @@ import { Extension } from "./interface";
 export class EqualExtension extends Extension {
   static name = "equal" as const;
 
-  static async handler(...args: any[]): Promise<boolean | undefined> {
+  static handler(...args: any[]): boolean | undefined {
     if (args.length !== 1) {
       throw new Error("Equal Extension requires one argument.");
     }

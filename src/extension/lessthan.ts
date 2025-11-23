@@ -3,7 +3,7 @@ import { Extension } from "./interface";
 export class LessThanExtension extends Extension {
   static name = "lessThan" as const;
 
-  static async handler(...args: any[]): Promise<boolean | undefined> {
+  static handler(...args: any[]): boolean | undefined {
     if (args.length !== 1) {
       throw new Error("Less Than Extension requires one argument.");
     }
