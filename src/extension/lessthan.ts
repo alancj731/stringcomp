@@ -3,7 +3,7 @@ import { Extension } from "./interface";
 export class LessThanExtension extends Extension {
   static name = "lessThan" as const;
 
-  static handler(...args: any[]): boolean | undefined {
+  static handler(...args: any[]): boolean {
     if (args.length !== 1) {
       throw new Error("Less Than Extension requires one argument.");
     }

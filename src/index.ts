@@ -13,3 +13,4 @@ for (const key of Object.keys(extensions)) {
         return extensions[key as keyof typeof extensions].apply(this, args);
     };
 }
+export {};
