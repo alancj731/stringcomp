@@ -34,3 +34,4 @@ declare global {
     interface String extends Internal.ToInstanceMethod<Internal.ExtensionsType> {
     }
 }
+export {};

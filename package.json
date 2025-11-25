@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && tsup --format esm ./src/index.ts --dts --sourcemap --minify --clean",
+    "build": "npm run clean && tsup --format esm ./src/index.ts --dts --sourcemap --minify --clean && echo 'export {};' >> dist/index.d.ts",
     "prepare": "npm run build && husky install",
     "clean": "rm -rf dist"
   },
