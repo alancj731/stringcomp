@@ -16,10 +16,10 @@ declare global {
 
 const StringPrototype = String.prototype as any;
 
-for (const key of Object.keys(extensions)) {
+for (const [key, handler] of Object.entries(extensions)) {
     Object.defineProperty(StringPrototype, key, {
         value: function (...args: any[]) {
-            return extensions[key as keyof typeof extensions](String(this), ...args);
+            return handler.call(String(this), ...args);
         },
         writable: true,
         enumerable: false, // Prevents pollution in 'for...in' loops
