@@ -4,6 +4,7 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
@@ -15,8 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && tsup --format cjs,esm ./src/index.ts --dts --sourcemap --minify --clean",
-    "prepare": "npm run build && husky",
+    "build": "npm run clean && tsup --format esm ./src/index.ts --dts --sourcemap --minify --clean",
+    "prepare": "npm run build && husky install",
     "clean": "rm -rf dist"
   },
   "repository": {

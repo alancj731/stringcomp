@@ -24,8 +24,13 @@ declare const extensions: {
     equal: typeof EqualExtension.handler;
 };
 
-type ExtensionsType = typeof extensions;
+declare namespace Internal {
+    type ToInstanceMethod<T> = {
+        [K in keyof T]: T[K] extends (head: any, ...tail: infer P) => infer R ? (this: string, ...args: P) => R : never;
+    };
+    type ExtensionsType = typeof extensions;
+}
 declare global {
-    interface String extends ExtensionsType {
+    interface String extends Internal.ToInstanceMethod<Internal.ExtensionsType> {
     }
 }
