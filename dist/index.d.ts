@@ -1,21 +1,21 @@
 declare abstract class Extension extends String {
     static name: string;
-    static handler(...args: any[]): boolean | undefined;
+    static handler(...args: any[]): boolean;
 }
 
 declare class GreaterThanExtension extends Extension {
     static name: "greaterThan";
-    static handler(...args: any[]): boolean | undefined;
+    static handler(...args: any[]): boolean;
 }
 
 declare class LessThanExtension extends Extension {
     static name: "lessThan";
-    static handler(...args: any[]): boolean | undefined;
+    static handler(...args: any[]): boolean;
 }
 
 declare class EqualExtension extends Extension {
     static name: "equal";
-    static handler(...args: any[]): boolean | undefined;
+    static handler(...args: any[]): boolean;
 }
 
 declare const extensions: {
